@@ -1,0 +1,15 @@
+<div>
+	<div>
+		<input type="text" placeholder="Add name item" data-ng-model="newItem.name">
+		<input type="text" placeholder="Add price" data-ng-model="newItem.price">
+		<button data-ng-click="add()">{{ inputController.label }}</button>
+	</div>
+
+	<ul>
+		<li data-ng-repeat="product in shoppingList">
+			{{product.name}} {{product.price | currency}} 
+			<button data-ng-click="edit($index)">Edit</button> 
+			<button data-ng-click="delete($index)">Delete</button>
+		</li>
+	</ul>
+</div>
